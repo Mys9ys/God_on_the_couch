@@ -1,0 +1,8 @@
+.map_container {
+  grid-area: h;
+}
+.map_container .svg_map_box {
+  width: 100%;
+  height: 600px;
+}
+/*# sourceMappingURL=Map.module.css.map */
