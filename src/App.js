@@ -13,9 +13,9 @@ class App extends Component {
                 <div className="app_wrapper_content">
                     <Switch>
                         <Route path="/" render={() =>
-                            <MapContainer/>}/>
+                            <MapContainer store={this.props.store}/>}/>
                         <Route path="/map" render={() =>
-                            <MapContainer/>}/>
+                            <MapContainer store={this.props.store}/>}/>
                         <Route path="*" render={() =>
                             <div>404 not found</div>
                         }/>

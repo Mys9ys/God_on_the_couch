@@ -1,12 +1,23 @@
-import React, {Component} from "react";
+import React from "react";
 import Map from "./Map";
+import {setMapScale} from "../../redux/map.reducer";
+import {connect} from "react-redux";
+import {compose} from "redux";
 
-class MapContainer extends React.Component {
-    render(){
-        return (
-            <Map/>
-        )
+let mapStateToProps = (state) => {
+    return {
+        map: state.map,
     }
-}
+};
 
-export default MapContainer;
+let mapDispatchToProps = (dispatch)=> {
+    return {
+        setScale: (scale)=> {
+            dispatch(setMapScale(scale));
+        }
+    }
+};
+
+export default compose(
+    connect(mapStateToProps,mapDispatchToProps)
+)(Map);
